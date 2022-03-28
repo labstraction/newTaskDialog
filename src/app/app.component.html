@@ -1,3 +1,8 @@
-<button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-  <mat-icon>delete</mat-icon>
+<button (click)="openDialog()" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+  <mat-icon>add</mat-icon>
 </button>
+
+<app-dialog 
+[visibilityState]="dialogVisibility"
+(closedWithResult)="displayDialogResult($event)"
+></app-dialog>

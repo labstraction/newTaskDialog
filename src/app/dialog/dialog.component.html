@@ -1,0 +1,12 @@
+<div [@visibleInvisible]="visibilityState"
+(@visibleInvisible.start)="$event.element.style.display = 'flex'"
+(@visibleInvisible.done)="$event.element.style.display = ($event.toState === 'visible' ? 'flex' : 'none')"
+ class="container" (click)="closeDialog('chiuso')">
+    <div class="dialog" (click)="$event.stopPropagation()">
+        <h1>Ciao Mondo!!</h1>
+        <button (click)="closeDialog()">cancel</button>
+        <button (click)="closeDialog('ecco il risultato')">OK!</button>
+    </div>
+</div>
+
+
